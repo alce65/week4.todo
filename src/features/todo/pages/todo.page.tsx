@@ -1,5 +1,9 @@
 function TodoPage() {
-    return <h2>Todo page</h2>;
+    return (
+        <main>
+            <h2>Todo page</h2>
+        </main>
+    );
 }
 
 export default TodoPage;
