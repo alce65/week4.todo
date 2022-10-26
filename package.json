@@ -42,10 +42,19 @@
         },
         "plugins": [
             "@typescript-eslint"
-        ]
+        ],
+        "rules": {
+            "testing-library/no-render-in-setup": "off"
+        }
     },
     "prettier": {
         "singleQuote": true
+    },
+    "jest": {
+        "coveragePathIgnorePatterns": [
+            "<rootDir>/src/reportWebVitals.ts",
+            "<rootDir>/src/index.ts"
+        ]
     },
     "browserslist": {
         "production": [
