@@ -1,0 +1,11 @@
+.container {
+    background-color: #b9540c;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+}
