@@ -1,3 +1,4 @@
+import { Character } from '../character/character';
 import styles from './character.list.module.css';
 
 export function CharacterList() {
@@ -5,6 +6,7 @@ export function CharacterList() {
     return (
         <div className={styles.host}>
             <p>{title}</p>
+            <Character></Character>
         </div>
     );
 }
