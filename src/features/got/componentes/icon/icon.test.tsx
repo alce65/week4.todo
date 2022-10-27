@@ -7,7 +7,7 @@ describe('Given Icon component', () => {
         beforeEach(() => {
             render(
                 <Router>
-                    <Icon />
+                    <Icon category="king" />
                 </Router>
             );
         });

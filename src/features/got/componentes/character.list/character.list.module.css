@@ -2,63 +2,12 @@
     display: initial;
 }
 
-.character {
-    width: 20%;
-    flex-basis: auto;
-    flex-grow: 0;
-}
-.character__name {
-    height: 60px;
-}
-.character__picture {
-    object-fit: cover;
-    object-position: top;
-    height: 200px;
-}
-.character__card {
-    position: relative;
-    border: none;
-    background-color: #331c0e;
-    color: #fff;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    height: 400px;
+.characters-list {
     display: flex;
-    flex-direction: column;
-}
-.character__overlay {
-    border-radius: 0.25rem;
-    position: absolute;
-    padding: 25px 15px;
-    top: -100%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.2s;
-}
-.character:nth-child(even) .character__overlay {
-    top: 100%;
-}
-.character:hover .character__overlay {
-    opacity: 1;
-    pointer-events: all;
-    top: 0;
-}
-.character__actions {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    min-height: 100vh;
     align-items: center;
-    height: 90px;
-}
-.character__action {
-    background-color: #67331e;
-    color: #fff;
-    width: 80%;
+    gap: 50px;
+    list-style: none;
 }

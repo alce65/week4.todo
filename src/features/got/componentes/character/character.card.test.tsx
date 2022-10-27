@@ -1,19 +1,21 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter as Router } from 'react-router-dom';
-import { Character } from './character';
+import { King } from '../../models/king';
+import { CharacterCard } from './character.card';
 
-describe('Given Character component', () => {
+describe('Given CharacterCard component', () => {
     describe('When we render the component', () => {
         beforeEach(() => {
+            const mockCharacter = new King('Joffrey', 'Baratheon', 33, 2);
             render(
                 <Router>
-                    <Character />
+                    <CharacterCard character={mockCharacter} />
                 </Router>
             );
         });
         test('Then it should display the title', () => {
-            const title = new RegExp('Character', 'i');
-            const element = screen.getByText(title);
+            const value = new RegExp('Joffrey', 'i');
+            const element = screen.getByText(value);
             expect(element).toBeInTheDocument();
         });
     });
