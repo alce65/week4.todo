@@ -12,7 +12,7 @@ describe('Given TaskApi Service', () => {
             global.fetch = jest
                 .fn()
                 .mockResolvedValue({ json: jest.fn().mockResolvedValue([]) });
-            const result = await service.getTask();
+            const result = await service.getTasks();
             expect(fetch).toHaveBeenCalled();
             expect(result).toEqual([]);
         });

@@ -1,13 +1,17 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter as Router } from 'react-router-dom';
+import { Task } from '../../models/task';
 import { TaskItem } from './task.item';
 
 describe('Given TaskItem component', () => {
     describe('When we render the component', () => {
         beforeEach(() => {
+            const mockTask = new Task('', '');
+            // Otra alternativa gracias al duck typing sería:
+            // const mockTask: Task = {id: 0, title: '', responsible: '', isComplete: false}
             render(
                 <Router>
-                    <TaskItem />
+                    <TaskItem item={mockTask} />
                 </Router>
             );
         });

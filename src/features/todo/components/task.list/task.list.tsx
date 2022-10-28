@@ -15,7 +15,7 @@ export function TaskList() {
             <AddTask></AddTask>
             <ul>
                 {tasks.map((item: Task) => (
-                    <TaskItem item={item}></TaskItem>
+                    <TaskItem key={item.id} item={item}></TaskItem>
                 ))}
             </ul>
         </section>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Task } from '../../../features/todo/models/task';
 import { TaskApi } from '../../../features/todo/services/task.api';
 
@@ -7,7 +7,14 @@ import { TodoContext } from './context';
 export function TodoContextProvider({ children }: { children: JSX.Element }) {
     const initialTasks: Array<Task> = [];
     const [tasks, setTasks] = useState(initialTasks);
-    const api = new TaskApi();
+    const api = useMemo(() => {
+        return new TaskApi();
+    }, []);
+
+    useEffect(() => {
+        //Asincronia
+        api.getTasks().then((tasks) => setTasks(tasks));
+    }, [api]);
 
     const handleAdd = (newTask: Task) => {
         api.createTask(newTask).then((task: Task) => {
@@ -22,6 +29,13 @@ export function TodoContextProvider({ children }: { children: JSX.Element }) {
             }
         });
     };
+
+    const handlerUpdate = (updateTask: Task) => {
+        api.updateTask(updateTask.id, updateTask).then((task) => {
+            tasks.map((item) => (item.id === task.id ? task : item));
+        });
+    };
+
     const handlerComplete = (task: Task) => {
         api.updateTask(task.id, { isComplete: !task.isComplete }).then(
             (task) => {

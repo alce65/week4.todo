@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { TodoContext } from '../../../../infrastructure/context/todo/context';
 import { Task } from '../../models/task';
-import styles from './add.task.module.css';
+import styles from './task.item.module.css';
 
 export function TaskItem({ item }: { item: Task }) {
     const { handlerEraser, handlerComplete } = useContext(TodoContext);
