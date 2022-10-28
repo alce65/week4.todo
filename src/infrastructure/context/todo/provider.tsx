@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Task } from '../../../features/todo/models/task';
+import { ITask, Task } from '../../../features/todo/models/task';
 import { TaskApi } from '../../../features/todo/services/task.api';
 
 import { TodoContext } from './context';
@@ -16,7 +16,7 @@ export function TodoContextProvider({ children }: { children: JSX.Element }) {
         api.getTasks().then((tasks) => setTasks(tasks));
     }, [api]);
 
-    const handleAdd = (newTask: Task) => {
+    const handleAdd = (newTask: ITask) => {
         api.createTask(newTask).then((task: Task) => {
             setTasks([...tasks, task]);
         });

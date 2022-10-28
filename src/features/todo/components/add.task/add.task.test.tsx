@@ -12,7 +12,7 @@ describe('Given AddTask component', () => {
             );
         });
         test('Then it should display the title', () => {
-            const title = new RegExp('AddTask', 'i');
+            const title = new RegExp('Añadir tareas', 'i');
             const element = screen.getByText(title);
             expect(element).toBeInTheDocument();
         });

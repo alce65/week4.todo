@@ -1,9 +1,9 @@
 import { createContext } from 'react';
-import { Task } from '../../../features/todo/models/task';
+import { ITask, Task } from '../../../features/todo/models/task';
 
 const initialContext: {
     tasks: Array<Task>;
-    handleAdd: (newTask: Task) => void;
+    handleAdd: (newTask: ITask) => void;
     handlerEraser: (deletedID: number) => void;
     handlerComplete: (task: Task) => void;
 } = {
