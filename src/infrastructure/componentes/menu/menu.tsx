@@ -6,6 +6,7 @@ export function Menu() {
         { id: '1', path: '', label: 'Inicio' },
         { id: '2', path: 'got', label: 'Game of Trons' },
         { id: '3', path: 'todo', label: 'Tareas' },
+        { id: '4', path: 'todoFlux', label: 'Tareas Flux' },
     ];
     return (
         <nav>
