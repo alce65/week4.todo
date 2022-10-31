@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { TodoFluxContext } from '../../context/context';
 import { useTasks } from '../../hooks/use.task';
 import { Task } from '../../models/task';
 import { AddTask } from '../add.task/add.task';
@@ -6,7 +8,7 @@ import styles from './task.list.module.css';
 
 export function TaskList() {
     const title = 'TaskList component';
-    const { tasks } = useTasks();
+    const { tasks } = useContext(TodoFluxContext);
 
     return (
         <section>

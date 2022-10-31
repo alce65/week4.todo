@@ -93,12 +93,6 @@
       "responsible": "Todos",
       "isComplete": true,
       "id": 3
-    },
-    {
-      "title": "Organizar grupos",
-      "responsible": "Ango y Sergio",
-      "isComplete": false,
-      "id": 4
     }
   ]
 }

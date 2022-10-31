@@ -1,5 +1,5 @@
-import { SyntheticEvent, useState } from 'react';
-import { useTasks } from '../../hooks/use.task';
+import { SyntheticEvent, useContext, useState } from 'react';
+import { TodoFluxContext } from '../../context/context';
 import { ITask } from '../../models/task';
 import styles from './add.task.module.css';
 
@@ -11,7 +11,7 @@ type formData = {
 export function AddTask() {
     const title = 'Añadir tareas';
 
-    const { handleAdd } = useTasks();
+    const { handleAdd } = useContext(TodoFluxContext);
 
     const initialState: formData = {
         title: '',
@@ -22,6 +22,7 @@ export function AddTask() {
     const handleSubmit = (ev: SyntheticEvent) => {
         ev.preventDefault();
         const newTask: ITask = { ...formState, isComplete: false };
+        debugger;
         handleAdd(newTask);
     };
 

@@ -1,11 +1,13 @@
-import { useTasks } from '../../hooks/use.task';
+import { useContext } from 'react';
+import { TodoFluxContext } from '../../context/context';
 import { Task } from '../../models/task';
 import styles from './task.item.module.css';
 
 export function TaskItem({ item }: { item: Task }) {
-    const { handlerEraser, handlerUpdate } = useTasks();
+    const { handlerEraser, handlerUpdate } = useContext(TodoFluxContext);
 
     const handleClick = () => {
+        debugger;
         handlerEraser(item);
     };
 
