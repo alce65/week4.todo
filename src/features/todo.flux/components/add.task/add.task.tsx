@@ -22,7 +22,6 @@ export function AddTask() {
     const handleSubmit = (ev: SyntheticEvent) => {
         ev.preventDefault();
         const newTask: ITask = { ...formState, isComplete: false };
-        debugger;
         handleAdd(newTask);
     };
 

@@ -7,7 +7,6 @@ export function TaskItem({ item }: { item: Task }) {
     const { handlerEraser, handlerUpdate } = useContext(TodoFluxContext);
 
     const handleClick = () => {
-        debugger;
         handlerEraser(item);
     };
 
