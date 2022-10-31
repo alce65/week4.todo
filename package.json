@@ -2,6 +2,15 @@
     "name": "week4.todo",
     "version": "0.1.0",
     "private": true,
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "test:all": "react-scripts test --watchAll --collect-coverage",
+        "test:prod": "react-scripts test --watchAll --collect-coverage --watchAll=false",
+        "eject": "react-scripts eject",
+        "lint": "eslint ."
+    },
     "dependencies": {
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^13.4.0",
@@ -19,14 +28,6 @@
         "react-scripts": "5.0.1",
         "typescript": "^4.8.4",
         "web-vitals": "^2.1.4"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "test:all": "react-scripts test --watchAll --collect-coverage",
-        "test:prod": "react-scripts test --watchAll --collect-coverage --watchAll=false",
-        "eject": "react-scripts eject"
     },
     "eslintConfig": {
         "extends": [

@@ -11,7 +11,7 @@ export function createCharacters() {
         new Fighter('Daenerys', 'Targaryen', 33, 'dragones', 9),
     ];
     data.push(new Counselor('Tyrion', 'Lannister', 33, data[2]));
-    data.push(new Squire('Bronn', 'Aguas Negras', 33, 5, <Fighter>data[1]));
+    data.push(new Squire('Bronn', 'Aguas Negras', 33, 5, data[1] as Fighter));
 
     return data;
 }

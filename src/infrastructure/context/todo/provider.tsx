@@ -30,11 +30,13 @@ export function TodoContextProvider({ children }: { children: JSX.Element }) {
         });
     };
 
-    const handlerUpdate = (updateTask: Task) => {
-        api.updateTask(updateTask.id, updateTask).then((task) => {
-            tasks.map((item) => (item.id === task.id ? task : item));
-        });
-    };
+    // Ejemplo de "Update" más genérico,
+    // no sólo para la propiedad complete
+    // const handlerUpdate = (updateTask: Task) => {
+    //     api.updateTask(updateTask.id, updateTask).then((task) => {
+    //         tasks.map((item) => (item.id === task.id ? task : item));
+    //     });
+    // };
 
     const handlerComplete = (task: Task) => {
         api.updateTask(task.id, { isComplete: !task.isComplete }).then(

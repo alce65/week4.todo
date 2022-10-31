@@ -1,4 +1,4 @@
-import { emoji } from '../../data/emojis';
+// import { emoji } from '../../data/emojis';
 import styles from './icon.module.css';
 
 export function Icon({ category }: { category: string }) {

@@ -38,7 +38,7 @@ export function CharacterCard({ character }: { character: Character }) {
         const element = ev.target as Element;
         if (element.textContent === 'habla') {
             console.log(character.communicate());
-            const selector = '.comunications';
+            // TODO: Render Communications
         } else {
             console.log('Muerooo', character.name);
             character.dead();
