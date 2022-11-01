@@ -9,7 +9,7 @@ type formData = {
 };
 
 export function AddTask() {
-    const title = 'Añadir tareas';
+    const title = 'Añadir tarea';
 
     const { handleAdd } = useContext(TodoFluxContext);
 

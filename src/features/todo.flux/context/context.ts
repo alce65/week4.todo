@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 import { ITask, Task } from '../../../features/todo/models/task';
 
-const initialContext: {
+export const initialContext: {
     tasks: Array<Task>;
     handleAdd: (newTask: ITask) => void;
     handlerEraser: (task: Task) => void;

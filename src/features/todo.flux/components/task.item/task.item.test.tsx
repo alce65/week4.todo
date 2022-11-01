@@ -6,7 +6,7 @@ import { TaskItem } from './task.item';
 describe('Given TaskItem component', () => {
     describe('When we render the component', () => {
         beforeEach(() => {
-            const mockTask = new Task('', '');
+            const mockTask = new Task('Test task', '');
             // Otra alternativa gracias al duck typing sería:
             // const mockTask: Task = {id: 0, title: '', responsible: '', isComplete: false}
             render(
@@ -16,7 +16,7 @@ describe('Given TaskItem component', () => {
             );
         });
         test('Then it should display the title', () => {
-            const title = new RegExp('TaskItem', 'i');
+            const title = new RegExp('Test task', 'i');
             const element = screen.getByText(title);
             expect(element).toBeInTheDocument();
         });
