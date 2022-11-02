@@ -8,6 +8,6 @@ export function make() {
 
 export function reMake() {
     const api = new OneClass();
-    api.bar();
     api.foo();
+    return api.bar();
 }
