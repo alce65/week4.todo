@@ -39,14 +39,12 @@ export function TodoContextProvider({ children }: { children: JSX.Element }) {
     // };
 
     const handlerComplete = (task: Task) => {
-        api.updateTask(task.id, { isComplete: !task.isComplete }).then(
-            (task) => {
-                tasks.map((item) =>
-                    item.id === task.id
-                        ? { ...item, isComplete: !item.isComplete }
-                        : item
-                );
-            }
+        api.updateTask(task.id, { isComplete: !task.isComplete }).then((task) =>
+            tasks.map((item) =>
+                item.id === task.id
+                    ? { ...item, isComplete: !item.isComplete }
+                    : item
+            )
         );
     };
     const context = {
