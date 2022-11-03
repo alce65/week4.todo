@@ -2,13 +2,19 @@ import { ITask, Task } from '../models/task';
 
 export class TaskApi {
     url: string;
-    constructor() {
-        this.url = 'http://localhost:3500/tasks';
+    constructor(url = '') {
+        this.url = url ? url : (process.env.REACT_APP_URL_TASKS as string);
     }
 
     // read / get
     getTasks(): Promise<Array<Task>> {
-        return fetch(this.url).then((response) => response.json());
+        return fetch(this.url).then((response) => {
+            if (response.ok) return response.json();
+            const message = `Error ${response.status}: ${response.statusText}`;
+            const error = new Error(message);
+            error.name = 'HTTPError';
+            throw error;
+        });
     }
 
     // create / post

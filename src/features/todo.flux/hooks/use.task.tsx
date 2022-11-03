@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useReducer } from 'react';
+import { useCallback, useEffect, useMemo, useReducer, useState } from 'react';
 import { ITask, Task } from '../models/task';
 import { tasksReducer } from '../reducers/reducer';
 import { TaskApi } from '../services/task.api';
@@ -6,15 +6,24 @@ import * as actions from '../reducers/action.creator';
 
 export function useTasks() {
     const initialState: Array<Task> = [];
+    // sin FLUX:
     // const [stateSimple, setStateSimple] = useState(initialState);
     const [tasks, dispatch] = useReducer(tasksReducer, initialState);
     const api = useMemo(() => {
         return new TaskApi();
     }, []);
 
+    const [hasError, setHasError] = useState(false);
+
     const handleLoad = useCallback(() => {
-        api.getTasks().then((tasks) => dispatch(actions.loadTaskAction(tasks)));
-        // setTasks(tasks));
+        api.getTasks()
+            .then((tasks) => dispatch(actions.loadTaskAction(tasks)))
+            // Sin FLUX
+            // setTasks(tasks));
+            .catch((error: Error) => {
+                console.log(error.message);
+                setHasError(true);
+            });
     }, [api]);
 
     const handleAdd = (newTask: ITask) => {
@@ -46,6 +55,7 @@ export function useTasks() {
 
     return {
         tasks,
+        hasError,
         handleAdd,
         handlerEraser,
         handlerUpdate,

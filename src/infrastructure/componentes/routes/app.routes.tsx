@@ -3,12 +3,22 @@ import GotPage from '../../../features/got/pages/got.page';
 import HomePage from '../../../features/home/page/home.page';
 import TodoPage from '../../../features/todo/pages/todo.page';
 import TodoFluxPage from '../../../features/todo.flux/pages/todo.page';
+import { PrivateRoute } from '../private.route/private.route';
 
 export function AppRoutes() {
     return (
         <Routes>
             <Route path="home" element={<HomePage></HomePage>}></Route>
-            <Route path="todo" element={<TodoPage></TodoPage>}></Route>
+
+            <Route
+                path="todo"
+                element={
+                    <PrivateRoute>
+                        <TodoPage></TodoPage>
+                    </PrivateRoute>
+                }
+            ></Route>
+
             <Route
                 path="todoFlux"
                 element={<TodoFluxPage></TodoFluxPage>}
